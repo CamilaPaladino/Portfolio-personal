@@ -7,7 +7,7 @@
 
 - 👨‍💻 Todos mis proyectos están disponibles en [https://www.linkedin.com/in/camila-paladino-/](https://www.linkedin.com/in/camila-paladino-/)
 
-- 💬 Preguntame por **HTML, CSS, SASS, GIT**
+- 💬 Preguntame por **HTML, CSS, SASS, GIT, JavaScript**
 
 - 📫 Contactame **camilapaladinoblees@gmail.com**
 

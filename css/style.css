@@ -482,7 +482,7 @@ form textarea {
   
 }
 
-#mensajeEnviado {
+#mensajeEnviado, #validacion {
     margin-top: 5px;
     text-align: center;
     font-family: 'univia_proregular';

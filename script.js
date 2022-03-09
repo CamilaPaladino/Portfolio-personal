@@ -53,25 +53,32 @@ const mensajeEnviado = document.getElementById('mensajeEnviado')
 const nombre = document.getElementById ('nombre')
 const email = document.getElementById ('email')
 const mensaje = document.getElementById ('mensaje')
+const validacion = document.getElementById ('validacion')
 
 
-document.getElementById('form')
- .addEventListener('submit', function(event) {
-   event.preventDefault();
+document.getElementById('form').addEventListener('submit', function(event) {
+    if(nombre.value != "" && email.value != "" &&  mensaje.value != ""){
+        event.preventDefault();
+        validacion.style.display = "none"
+        btn.value = 'Enviando...';
 
-   btn.value = 'Enviando...';
+        const serviceID = 'default_service';
+        const templateID = 'template_saovcli';
 
-   const serviceID = 'default_service';
-   const templateID = 'template_saovcli';
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+            btn.value = 'ENVIAR MENSAJE';
+            mensajeEnviado.style.display="block"
+            nombre.value = ""
+            email.value = ""
+            mensaje.value = ""
+            btn.value = 'ENVIAR MENSAJE';
+            alert(JSON.stringify(err));
+        });
 
-   emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.value = 'ENVIAR MENSAJE';
-      mensajeEnviado.style.display="block"
-      nombre.value = ""
-      email.value = ""
-      mensaje.value = ""
-      btn.value = 'ENVIAR MENSAJE';
-      alert(JSON.stringify(err));
-    });
+    }else {
+        event.preventDefault();
+        validacion.style.display = "block"
+    }
+   
 });
